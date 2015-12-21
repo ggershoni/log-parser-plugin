@@ -11,6 +11,7 @@ public class LogParserResult {
     private int totalErrors = 0;
     private int totalWarnings = 0;
     private int totalInfos = 0;
+    private int totalOKs = 0;
 
     private String htmlLogFile;
     private String errorLinksFile;
@@ -55,6 +56,10 @@ public class LogParserResult {
         return totalInfos;
     }
 
+    public int getTotalOKs() {
+        return totalOKs;
+    }    
+    
     public String getHtmlLogFile() {
         return htmlLogFile;
     }
@@ -133,6 +138,10 @@ public class LogParserResult {
 
     public void setTotalInfos(final int totalInfos) {
         this.totalInfos = totalInfos;
+    }
+    
+    public void setTotalOKs(final int totalOKs) {
+        this.totalOKs = totalOKs;
     }
 
     public void setParsedLogURL(final String parsedLogURL) {

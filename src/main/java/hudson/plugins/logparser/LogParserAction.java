@@ -142,6 +142,8 @@ public class LogParserAction implements Action {
                     new ChartUtil.NumberOnlyBuildLabel(a.getOwner()));
             dsb.add(a.result.getTotalInfos(), "infos",
                     new ChartUtil.NumberOnlyBuildLabel(a.getOwner()));
+            dsb.add(a.result.getTotalOKs(), "oks",
+                    new ChartUtil.NumberOnlyBuildLabel(a.getOwner()));
         }
         return dsb.build();
     }
@@ -210,16 +212,20 @@ public class LogParserAction implements Action {
                 case 0:
                     return "Errors: " + result.getTotalErrors();
                 case 1:
-                    return "Warnings: " + result.getTotalWarnings();
-                default:
                     return "Infos: " + result.getTotalInfos();
+                case 2:
+                	return "OKs: " + result.getTotalOKs();
+                default:
+                	return "Warnings: " + result.getTotalWarnings();
                 }
             }
         };
         plot.setRenderer(ar);
         ar.setSeriesPaint(0, ColorPalette.RED);    // error
         ar.setSeriesPaint(1, ColorPalette.BLUE);   // info
-        ar.setSeriesPaint(2, ColorPalette.YELLOW); // warning
+        ar.setSeriesPaint(2, ColorPalette.GREY);   // ok
+        ar.setSeriesPaint(3, ColorPalette.YELLOW); // warning
+        
 
         // crop extra space around the graph
         plot.setInsets(new RectangleInsets(0, 0, 0, 5.0));

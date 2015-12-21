@@ -37,7 +37,7 @@ public final class LogParserUtils {
     public static String standardizeStatus(final String status) {
         String result = status;
         if (result.equalsIgnoreCase("ok")) {
-            result = LogParserConsts.NONE;
+            result = LogParserConsts.OK;
         } else if (result.equalsIgnoreCase("end")) {
             result = LogParserConsts.INFO;
         } else if (result.equalsIgnoreCase("warn")

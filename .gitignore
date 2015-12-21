@@ -8,6 +8,9 @@ work
 .idea
 out
 
+# OSX files
+.DS_Store
+
 # eclipse project file
 .settings
 .classpath
